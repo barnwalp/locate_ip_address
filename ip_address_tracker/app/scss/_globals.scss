@@ -19,7 +19,7 @@ body {
   font-size: $font-med;
   font-weight: 400;
   font-family: "Rubik", sans-serif;
-  background-color: $VeryLightGray;
+  // background-color: $VeryLightGray;
 }
 
 // remove inbuilt browser design
@@ -32,4 +32,9 @@ a,
 a:visited,
 a:hover {
   text-decoration: none;
+}
+
+#map {
+  height: size(500);
+  // width: size(650);
 }
