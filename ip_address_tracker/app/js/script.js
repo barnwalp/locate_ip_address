@@ -44,3 +44,15 @@ googleTerrain = L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}',
 
 //adding tile to our map
 googleStreets.addTo(map);
+
+ip_address = '157.41.95.184';
+//getting lat lang from ipify
+var lat = 19.10;
+var lang = 73.0;
+
+//marker
+var singleMarker = L.marker([lat, lang], {draggable: true});
+singleMarker.addTo(map);
+// message = 'Sambalpur, ' + singleMarker.getLatLng();
+message = 'IP Address: ' + ip_address;
+singleMarker.bindPopup(message).openPopup();
