@@ -45,14 +45,29 @@ googleTerrain = L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}',
 //adding tile to our map
 googleStreets.addTo(map);
 
+input_bar = document.getElementById('ip-search');
+submit = document.querySelector('.submit_button');
+
+submit.addEventListener('click', function(){
+  ip_address = input_bar.value;
+  console.log(ip_address);
+});
 ip_address = '157.41.95.184';
 //getting lat lang from ipify
 var lat = 19.10;
 var lang = 73.0;
+var region = 'State of Maharashtra';
+var country = 'IN';
+var isp = 'Reliance Jio Infocomm Limited';
 
 //marker
 var singleMarker = L.marker([lat, lang], {draggable: true});
+map.setView([lat, lang], 13);
 singleMarker.addTo(map);
+content = `IP Address: ${ip_address}<br>
+Location: ${region}<br>
+Country: ${country}<br>
+ISP: ${isp}`;
 // message = 'Sambalpur, ' + singleMarker.getLatLng();
-message = 'IP Address: ' + ip_address;
-singleMarker.bindPopup(message).openPopup();
+// message = 'IP Address: ' + ip_address;
+singleMarker.bindPopup(content).openPopup();
