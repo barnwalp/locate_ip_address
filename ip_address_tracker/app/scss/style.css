@@ -18,8 +18,8 @@ body {
   font-size: 1rem;
   font-weight: 400;
   font-family: "Rubik", sans-serif;
-  background: -webkit-gradient(linear, left top, right top, from(#443e98), to(#6086f3)) url("../../images/topography.svg");
-  background: linear-gradient(90deg, #443e98, #6086f3) url("../../images/topography.svg");
+  background: -webkit-gradient(linear, left top, right top, from(#443e98), to(#6086f3));
+  background: linear-gradient(90deg, #443e98, #6086f3);
 }
 
 h1,
@@ -32,6 +32,11 @@ a,
 a:visited,
 a:hover {
   text-decoration: none;
+}
+
+.background {
+  background-image: url("../../images/topography.svg");
+  opacity: 0.5;
 }
 
 #map {
