@@ -35,14 +35,35 @@ a:hover {
 }
 
 <<<<<<< HEAD
-.background {
-  background-image: url("../../images/endless-constellation.svg");
-  opacity: 0.1;
+<<<<<<< HEAD
+=======
+#map {
+  height: 31.25rem;
 }
 
+>>>>>>> 88b4c43 (feat/changing opacity of svg pattern using absolute position)
+.background {
+  overflow: hidden;
+  position: relative;
+}
+
+<<<<<<< HEAD
 =======
 >>>>>>> 7d7e3d5 (feat/changed color settings)
 #map {
   height: 31.25rem;
+=======
+.background .heading-image {
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+.background .heading h2 {
+  color: white;
+>>>>>>> 88b4c43 (feat/changing opacity of svg pattern using absolute position)
 }
 /*# sourceMappingURL=style.css.map */

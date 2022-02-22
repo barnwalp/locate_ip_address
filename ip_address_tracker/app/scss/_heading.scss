@@ -1,9 +1,17 @@
 .background {
+<<<<<<< HEAD
   // overflow: hidden;
   position: relative;
   .heading {
     &-image {
       opacity: 0.2;
+=======
+  overflow: hidden;
+  position: relative;
+  .heading {
+    &-image {
+      opacity: 0.5;
+>>>>>>> 88b4c43 (feat/changing opacity of svg pattern using absolute position)
       position: absolute;
       left: 0;
       top: 0;
