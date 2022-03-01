@@ -34,36 +34,18 @@ a:hover {
   text-decoration: none;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 #map {
   height: 31.25rem;
 }
 
->>>>>>> 88b4c43 (feat/changing opacity of svg pattern using absolute position)
 .background {
-  overflow: hidden;
-  position: relative;
+  background: -webkit-gradient(linear, left top, right top, from(#443e98), to(#6086f3));
+  background: linear-gradient(90deg, #443e98, #6086f3);
+  background-image: url("../../images/topography.svg");
+  opacity: 0.7;
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> 7d7e3d5 (feat/changed color settings)
-#map {
-  height: 31.25rem;
-=======
-.background .heading-image {
-  opacity: 0.5;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: auto;
-}
-
-.background .heading h2 {
+.background h2 {
   color: white;
->>>>>>> 88b4c43 (feat/changing opacity of svg pattern using absolute position)
 }
 /*# sourceMappingURL=style.css.map */
