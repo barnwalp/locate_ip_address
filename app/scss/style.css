@@ -17,9 +17,9 @@ body {
   line-height: 1.3;
   font-size: 1rem;
   font-weight: 400;
-  font-family: "Rubik", sans-serif;
-  background: -webkit-gradient(linear, left top, right top, from(#443e98), to(#6086f3));
-  background: linear-gradient(90deg, #443e98, #6086f3);
+  font-family: "Roboto", sans-serif;
+  background: -webkit-gradient(linear, left top, right top, from(#5057b1), to(#87a5f8));
+  background: linear-gradient(90deg, #5057b1, #87a5f8);
 }
 
 h1,
@@ -39,13 +39,50 @@ a:hover {
 }
 
 .background {
-  background: -webkit-gradient(linear, left top, right top, from(#443e98), to(#6086f3));
-  background: linear-gradient(90deg, #443e98, #6086f3);
   background-image: url("../../images/topography.svg");
-  opacity: 0.7;
+  /*
+  Using absolute position to change the opacity of html image element
+  position: relative;
+  .heading {
+    &-image {
+      // opacity: 0.2;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: auto;
+    }
+  */
 }
 
-.background h2 {
+.background .heading {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.background .heading h2 {
+  text-align: center;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
   color: white;
+}
+
+.background .heading #ip-search {
+  width: 23.75rem;
+  height: 2.2rem;
+  padding: 0 1rem;
+  border-radius: 0.75rem;
+  border-width: 0;
+}
+
+.background .heading button {
+  background-color: #3f3f3f;
+  height: 2.2rem;
+  width: 2.8rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 0.75rem;
 }
 /*# sourceMappingURL=style.css.map */
