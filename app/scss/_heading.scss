@@ -26,16 +26,31 @@
       width: size(380);
       height: 2.2rem;
       padding: 0 size(16);
-      border-radius: size(12);
+      border-top-left-radius: size(12);
+      border-bottom-left-radius: size(12);
       border-width: 0;
+      &:focus {
+        // This will remove the border while clicking
+        outline: none;
+      }
     }
     button {
-      background-color: $LightBlack;
+      background-color: Black;
       height: 2.2rem;
       width: 2.8rem;
       color: white;
       font-weight: bold;
-      border-radius: size(12);
+      border-top-right-radius: size(12);
+      border-bottom-right-radius: size(12);
+      margin-left: -4px;
+      // This removes the weird shadow on the button
+      border: 0.5px solid black;
+      &:hover {
+        background-color: $LightBlack;
+      }
+      &:active {
+        background-color: rgb(39, 39, 39);
+      }
     }
   }
 }

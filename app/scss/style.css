@@ -73,16 +73,32 @@ a:hover {
   width: 23.75rem;
   height: 2.2rem;
   padding: 0 1rem;
-  border-radius: 0.75rem;
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
   border-width: 0;
 }
 
+.background .heading #ip-search:focus {
+  outline: none;
+}
+
 .background .heading button {
-  background-color: #3f3f3f;
+  background-color: Black;
   height: 2.2rem;
   width: 2.8rem;
   color: white;
   font-weight: bold;
-  border-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  margin-left: -4px;
+  border: 0.5px solid black;
+}
+
+.background .heading button:hover {
+  background-color: #3f3f3f;
+}
+
+.background .heading button:active {
+  background-color: #272727;
 }
 /*# sourceMappingURL=style.css.map */
