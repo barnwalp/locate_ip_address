@@ -35,11 +35,12 @@ a:hover {
 }
 
 #map {
-  height: 31.25rem;
+  height: 80vh;
   z-index: 1;
 }
 
 .background {
+  height: 12.1875rem;
   background-image: url("../../images/topography.svg");
   /*
   Using absolute position to change the opacity of html image element
@@ -105,12 +106,19 @@ a:hover {
 }
 
 .display {
-  z-index: 19;
+  position: relative;
+}
+
+.display .psn {
+  position: absolute;
+  top: 0.5rem;
+  left: 10%;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 80%;
-  height: 6rem;
+  height: 7rem;
   margin: 0 auto;
   background: white;
   -ms-flex-pack: distribute;
@@ -121,13 +129,13 @@ a:hover {
   border-radius: 15px;
 }
 
-.display .display-items .display-title {
+.display .psn .display-items .display-title {
   font-size: 0.6rem;
   font-weight: bold;
   color: #969696;
 }
 
-.display .display-items .display-content {
+.display .psn .display-items .display-content {
   font-size: 1.3rem;
   color: #2b2b2b;
   font-weight: bold;
