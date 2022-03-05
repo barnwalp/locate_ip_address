@@ -1,7 +1,7 @@
-//21.467296481745876, 83.97723937273383
+let ip_address;
 
 //Map Initialization
-var map = L.map('map').setView([21.46, 83.97], 13);
+var map = L.map('map').setView([19.10, 73.0], 13);
 
 //osm layer
 var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -46,11 +46,16 @@ googleTerrain = L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}',
 googleStreets.addTo(map);
 
 input_bar = document.getElementById('ip-search');
-submit = document.querySelector('.submit_button');
+submit = document.querySelector('.submit-button');
 
 submit.addEventListener('click', function(){
-  ip_address = input_bar.value;
-  console.log(ip_address);
+  let match = check_ipv4(input_bar.value);
+  if (match) {
+    ip_address = match[0];
+    console.log(ip_address)
+  } else {
+    console.log('please enter correct IP Address');
+  }
 });
 ip_address = '157.41.95.184';
 //getting lat lang from ipify
@@ -64,6 +69,7 @@ var isp = 'Reliance Jio Infocomm Limited';
 var singleMarker = L.marker([lat, lang], {draggable: true});
 map.setView([lat, lang], 13);
 singleMarker.addTo(map);
+
 content = `IP Address: ${ip_address}<br>
 Location: ${region}<br>
 Country: ${country}<br>
@@ -71,3 +77,14 @@ ISP: ${isp}`;
 // message = 'Sambalpur, ' + singleMarker.getLatLng();
 // message = 'IP Address: ' + ip_address;
 singleMarker.bindPopup(content).openPopup();
+
+// Check if ip address is correct
+const check_ipv4 = function(value) {
+  const regex = /(\d{1,3})[.](\d{1,3})[.](\d{1,3})[.](\d{1,3})/;
+  let match = value.match(regex);
+  if (match && value == match[0]) {
+    return match;
+  } else {
+    return 0;
+  }
+}
