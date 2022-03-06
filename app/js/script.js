@@ -1,4 +1,10 @@
-let ip_address;
+var ip_address = '157.41.95.184';
+var data;
+var lat = 19.10;
+var lang = 73.0;
+var region = 'State of Maharashtra';
+var country = 'IN';
+var isp = 'Reliance Jio Infocomm Limited';
 
 //Map Initialization
 var map = L.map('map').setView([19.10, 73.0], 13);
@@ -8,7 +14,7 @@ var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
 
-//water color
+//water color map
 var waterColor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
 	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 	subdomains: 'abcd',
@@ -53,17 +59,17 @@ submit.addEventListener('click', function(){
   if (match) {
     ip_address = match[0];
     console.log(ip_address)
+    data = get_location(ip_address);
   } else {
     console.log('please enter correct IP Address');
   }
 });
-ip_address = '157.41.95.184';
 //getting lat lang from ipify
-var lat = 19.10;
-var lang = 73.0;
-var region = 'State of Maharashtra';
-var country = 'IN';
-var isp = 'Reliance Jio Infocomm Limited';
+lat = data[0];
+lang = data[1];
+region = data[2];
+country = data[3];
+isp = data[4];
 
 //marker
 var singleMarker = L.marker([lat, lang], {draggable: true});
@@ -87,4 +93,31 @@ const check_ipv4 = function(value) {
   } else {
     return 0;
   }
+}
+
+// Finding location details from ip address using ipify
+const get_location = function(ip_address) {
+  const request = new XMLHttpRequest();
+
+  let url = 'https://geo.ipify.org/api/v2/country,city';
+  let api_key = 'at_hhw6rSdaSl7lRXarSjrGYNOOi4D2D';
+
+  let final_url = url + "?apiKey=" + api_key + "&ipAddress=" + ip_address;
+  request.open('GET', final_url, true);
+  request.send();
+
+  request.onload = function() {
+    // Default values;
+    if (request.status != 200) {
+      console.log(`Error ${request.status} : ${request.statusText}`);
+    } else {
+      let data = JSON.parse(request.response);
+      lat = data.location.lat;
+      lang = data.location.lng;
+      region = data.location.region;
+      country = data.location.country;
+      isp = data.isp;
+    }
+  }
+  return [lat, lang, region, country, isp];
 }
