@@ -56,3 +56,17 @@
     }
   }
 }
+
+// Design for Mobile screen
+@media (max-width: size(640)) {
+  .background {
+    height: size(260);
+    .heading {
+      // padding: 0 1.5rem;
+      #ip-search {
+        width: 75%;
+        display: inline-block;
+      }
+    }
+  }
+}

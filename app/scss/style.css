@@ -105,20 +105,34 @@ a:hover {
   background-color: #272727;
 }
 
+@media (max-width: 40rem) {
+  .background {
+    height: 16.25rem;
+  }
+  .background .heading #ip-search {
+    width: 75%;
+    display: inline-block;
+  }
+}
+
 .display {
   position: relative;
 }
 
 .display .psn {
   position: absolute;
-  top: 0.5rem;
+  top: 0.46875rem;
   left: 10%;
   z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 80%;
-  height: 7rem;
+  height: 15rem;
   margin: 0 auto;
   background: white;
   -ms-flex-pack: distribute;
@@ -129,8 +143,12 @@ a:hover {
   border-radius: 15px;
 }
 
+.display .psn .display-items {
+  text-align: center;
+}
+
 .display .psn .display-items .display-title {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   font-weight: bold;
   color: #969696;
 }
@@ -139,5 +157,15 @@ a:hover {
   font-size: 1.3rem;
   color: #2b2b2b;
   font-weight: bold;
+}
+
+@media (min-width: 40rem) {
+  .psn {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 7rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
