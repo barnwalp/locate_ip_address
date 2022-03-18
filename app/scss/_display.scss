@@ -31,9 +31,12 @@
 }
 
 // Design for Desktop screen
-@media (min-width: size(640)) {
-  .psn {
-    flex-direction: row;
-    height: 7rem;
+@media screen and (min-width: 640px) {
+  .display {
+    .psn {
+      display: flex;
+      flex-direction: row;
+      height: 7rem;
+    }
   }
 }
